@@ -1,0 +1,24 @@
+#dateLabel {
+  font-size: 20;
+  font-family: System-Bold;
+  text-length: 20;
+  text-anchor: start;
+  x: 80%;
+  y: 7%;
+  fill: #ff6600;
+}
+
+#heartrateLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 3;
+  text-anchor: middle;
+  x: 10%;
+  y: 95%;
+  fill: red;
+}
+
+#heartrateIcon {
+  x: 5%;
+  y: 80%;
+}
