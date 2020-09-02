@@ -1,2 +1,2 @@
-# clockspot
-Hubspot logo inspired fitbit clock face
+# Vozao watch
+Ceara fitbit clock face
