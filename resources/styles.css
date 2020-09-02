@@ -1,24 +1,93 @@
 #dateLabel {
-  font-size: 20;
+  font-size: 25;
   font-family: System-Bold;
   text-length: 20;
   text-anchor: start;
-  x: 80%;
-  y: 7%;
-  fill: #ff6600;
+  x: 70%;
+  y: 8%;
+  fill: #000000;
 }
 
 #heartrateLabel {
-  font-size: 30;
+  font-size: 20;
   font-family: System-Bold;
   text-length: 3;
   text-anchor: middle;
   x: 10%;
-  y: 95%;
-  fill: red;
+  y: 248;
+  fill: black;
+}
+
+#timeLabel {
+  font-size: 30;
+  font-family: System-Bold;
+  text-length: 8;
+  text-anchor: middle;
+  x: 69%;
+  y: 92%;
 }
 
 #heartrateIcon {
-  x: 5%;
-  y: 80%;
+  x: 20%;
+  y: 230;
+}
+
+#cearaIcon {
+  x: 40%;
+  y: 13%;
+}
+
+#stepsIcon {
+  x: 22%;
+  y: 78;
+}
+
+#caloriesIcon {
+  x: 19%;
+  y: 59%;
+}
+
+#distanceIcon {
+  x: 19%;
+  y: 43%;
+}
+
+#batteryLabel {
+  font-size: 20;
+  font-family: System-Bold;
+  text-length: 8;
+  text-anchor: start;
+  x: 3%;
+  y: 7%;
+  fill: black;
+}
+
+#stepsLabel {
+  font-size: 20;
+  font-family: System-Bold;
+  text-length: 8;
+  text-anchor: start;
+  x: 2%;
+  y: 98;
+  fill: black;
+}
+
+#caloriesLabel {
+  font-size: 20;
+  font-family: System-Bold;
+  text-length: 8;
+  text-anchor: start;
+  x: 2%;
+  y: 66%;
+  fill: black;
+}
+
+#distanceLabel {
+  font-size: 20;
+  font-family: System-Bold;
+  text-length: 8;
+  text-anchor: start;
+  x: 2%;
+  y: 49%;
+  fill: black;
 }

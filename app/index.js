@@ -1,62 +1,17 @@
 import clock from "clock";
 import document from "document";
 import onHeartUpdate from './heart';
+import { preferences } from "user-settings";
+import { zeroPad, } from "../common/utils"; 
+import { battery } from "power"; 
+import userActivity from "user-activity";
 
 
-let hourHand = document.getElementById("hours");
-let minHand = document.getElementById("mins");
-let secHand = document.getElementById("secs");
-let i = 1; 
-let initialSecs;
-let newSec = 0;
-
-// Returns an angle (0-360) for the current hour in the day, including minutes
-function hoursToAngle(hours, minutes) {
-  let hourAngle = (360 / 12) * hours;
-  let minAngle = (360 / 12 / 60) * minutes;
-  return hourAngle + minAngle;
-}
-
-// Returns an angle (0-360) for minutes
-function minutesToAngle(minutes) {
-  return (360 / 60) * minutes;
-}
-
-// Returns an angle (0-360) for seconds
-function secondsToAngle(seconds, angle) {
-  return (360 / 60) * seconds + angle;
-}
-
-
-// Rotate the hands every 100ms
-function updateClock() {
-  
-  let today = new Date();
-  let hours = today.getHours() % 12;
-  let mins = today.getMinutes();
-  let secs = today.getSeconds();
-  initialSecs = secs;
-  
-
-  if( initialSecs != newSec ) {
-    newSec = initialSecs;
-    i = 0;
-  }
-
-  let angle =  (6 / 10) * i;
-    
-  if( i > 10) {
-    i = 1;
-  }
-  i++;
-
-
-  hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
-  minHand.groupTransform.rotate.angle = minutesToAngle(mins);
-  secHand.groupTransform.rotate.angle = secondsToAngle(secs, angle);
-  }
-
-setInterval(updateClock, 100);
+const timeHandle = document.getElementById("timeLabel");
+const batteryHandle = document.getElementById("batteryLabel"); 
+const stepsHandle = document.getElementById("stepsLabel");
+const caloriesHandle = document.getElementById("caloriesLabel");
+const distanceHandle = document.getElementById("distanceLabel");
 
 // Heart Rate
 const heartrateHandle = document.getElementById("heartrateLabel");
@@ -71,13 +26,16 @@ onHeartUpdate(({ bpm, zone: rawZone }) => {
     zone = ` ${rawZone}`;
   }
   heartrateHandle.text  = `${bpm}`;
-  //heartrateHandle.text  = `${bpm} bpm${zone}`;
 });
+
+
 
 
 // Date 
 const dateValue = document.getElementById("dateLabel");
-clock.granularity = 'minutes';
+clock.granularity = 'seconds';
+
+
 clock.addEventListener('tick', (evt) => {
   const date = evt.date;
   dateValue.text = getDateValue(date);
@@ -92,3 +50,41 @@ function getDateValue(date) {
     date.getDate(),
   ].join(' ');
 }
+
+clock.ontick = (evt) => {
+  const now = evt.date; // get the actual instant
+  let hours = now.getHours(); // separate the actual hours from the instant "now"
+  let mins = now.getMinutes(); // separate the actual minute from the instant "now"
+  let secs = now.getSeconds(); // separate the actual second from the instan "now"
+  if (preferences.clockDisplay === "12h") { // check from your wach settings if you use 12h or 24h visualization
+    // 12h format
+    hours = hours % 12 || 12; 
+  } else {
+    // 24h format
+    hours = zeroPad(hours); // when you use 24h in case hours are in one digit then I put a zero in front. i.e. 3 am -> 03
+  }
+  let minsZeroed = zeroPad(mins); // one digit mins get a zero in front
+  let secsZeroes = zeroPad(secs); // one digit secs get a zero in front
+  timeHandle.text = `${hours}:${minsZeroed}:${secsZeroes}`; // time in format hh:mm:ss is assigned in the timeHandle defined at line 13
+  
+  
+  // Activity Values: adjusted type
+  let stepsValue = (userActivity.today.adjusted["steps"] || 0); // steps value measured from fitbit is assigned to the variable stepsValue
+  stepsHandle.text =  stepsValue;
+ 
+
+  let caloriesValue = (userActivity.today.adjusted["calories"] || 0); // calories
+  caloriesHandle.text =  caloriesValue;
+
+  let distanceValue = (userActivity.today.adjusted["distance"] || 0); // distance
+  distanceHandle.text =  distanceValue;
+
+  // Battery Measurement
+  let batteryValue = battery.chargeLevel; // measure the battery level and send it to the variable batteryValue
+  
+  // Assignment value battery
+  batteryHandle.text = `${batteryValue} %`; // the string including the batteryValue is being sent to the batteryHandle set at line 14
+}
+
+
+

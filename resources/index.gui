@@ -1,43 +1,37 @@
 <svg id="root" viewport-fill="#ffffff">
-  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-6" y="-110" width="12" height="110" fill="#ff6600" />
-    <circle cx="$-6" cy="-100" r="15" fill="#ff6600" />
+  
+  <g>
+    <image id="cearaIcon" width="180" height="210" href="vozao.png" />
   </g>
+  
+  <line x1="-19" x2="35%" y1="90" y2="90" fill="black" stroke-width="32" stroke-linecap="round"/>
+  <line x1="-19" x2="34%" y1="90" y2="90" fill="white" stroke-width="26" stroke-linecap="round"/>
+  
+
+  <line x1="-19" x2="30%" y1="140" y2="140" fill="black" stroke-width="32" stroke-linecap="round"/>
+  <line x1="-19" x2="29%" y1="140" y2="140" fill="white" stroke-width="26" stroke-linecap="round"/>
+
+  <line x1="-19" x2="30%" y1="190" y2="190" fill="black" stroke-width="32" stroke-linecap="round"/>
+  <line x1="-19" x2="29%" y1="190" y2="190" fill="white" stroke-width="26" stroke-linecap="round"/>
+
+  <line x1="-19" x2="35%" y1="240" y2="240" fill="black" stroke-width="32" stroke-linecap="round"/>
+  <line x1="-19" x2="34%" y1="240" y2="240" fill="white" stroke-width="26" stroke-linecap="round"/>
+
+
+  <image id="caloriesIcon" width="24" height="24" href="stat_cals_solid_24px.png" />
+
+  <image id="distanceIcon" width="24" height="24" href="stat_dist_solid_24px.png" />
+
+ 
+  <text id="heartrateLabel" />
+  <image id="heartrateIcon" width="24" height="24" href="stat_hr_solid_24px.png" />
+  <text id="timeLabel" />
+  <text id="dateLabel" />
+  <text id="batteryLabel" />
+  <text id="stepsLabel" />
+  <text id="caloriesLabel" />
+  <text id="distanceLabel" />
+  <image id="stepsIcon" width="24" height="24" href="stat_steps_solid_24px.png" />
+  
    
-  <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-6" y="-75" width="12" height="75" fill="#ff6600" />
-    <circle cx="$-6" cy="-70" r="12" fill="#ff6600" />
-  </g>
-  
-  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-6" y="-100" width="12" height="110" fill="#ff6600" />
-    <circle cx="$-6" cy="-113" r="15" fill="#ff6600" />
-  </g>
-  
-  <circle cx="50%" cy="50%" r="40" fill="#ff6600" />
-  <circle cx="50%" cy="50%" r="22" fill="#ffffff" />
-
-   <text id="heartrateLabel" />
-   <text id="dateLabel" />
-   <image id="heartrateIcon" width="24" height="24" href="heart24.png" />
-     
-
-   <g transform="translate(0,0) rotate(0)" opacity="1">
-    <circle cx="225" cy="30" r="4" fill="#ff6600" />
-    <circle cx="270" cy="75" r="4" fill="#ff6600" />
-    
-    <circle cx="270" cy="225" r="4" fill="#ff6600" />
-    <circle cx="225" cy="270" r="4" fill="#ff6600" />
-    
-    <circle cx="75" cy="270" r="4" fill="#ff6600" />
-    <circle cx="30" cy="225" r="4" fill="#ff6600" />
-
-    <circle cx="30" cy="75" r="4" fill="#ff6600" />
-    <circle cx="75" cy="30" r="4" fill="#ff6600" />
-
-    <circle cx="150" cy="10" r="7" fill="#ff6600" />
-    <circle cx="290" cy="150" r="7" fill="#ff6600" />
-    <circle cx="10" cy="150" r="7" fill="#ff6600" />
-    <circle cx="150" cy="290" r="7" fill="#ff6600" />
-   </g>
 </svg>
