@@ -1,12 +1,10 @@
 <svg id="root" viewport-fill="#ffffff">
-  
   <g>
     <image id="cearaIcon" width="180" height="210" href="vozao.png" />
   </g>
   
   <line x1="-19" x2="35%" y1="90" y2="90" fill="black" stroke-width="32" stroke-linecap="round"/>
   <line x1="-19" x2="34%" y1="90" y2="90" fill="white" stroke-width="26" stroke-linecap="round"/>
-  
 
   <line x1="-19" x2="30%" y1="140" y2="140" fill="black" stroke-width="32" stroke-linecap="round"/>
   <line x1="-19" x2="29%" y1="140" y2="140" fill="white" stroke-width="26" stroke-linecap="round"/>
@@ -17,11 +15,8 @@
   <line x1="-19" x2="35%" y1="240" y2="240" fill="black" stroke-width="32" stroke-linecap="round"/>
   <line x1="-19" x2="34%" y1="240" y2="240" fill="white" stroke-width="26" stroke-linecap="round"/>
 
-
   <image id="caloriesIcon" width="24" height="24" href="stat_cals_solid_24px.png" />
-
   <image id="distanceIcon" width="24" height="24" href="stat_dist_solid_24px.png" />
-
  
   <text id="heartrateLabel" />
   <image id="heartrateIcon" width="24" height="24" href="stat_hr_solid_24px.png" />
@@ -32,6 +27,4 @@
   <text id="caloriesLabel" />
   <text id="distanceLabel" />
   <image id="stepsIcon" width="24" height="24" href="stat_steps_solid_24px.png" />
-  
-   
 </svg>
