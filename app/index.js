@@ -85,6 +85,3 @@ clock.ontick = (evt) => {
   // Assignment value battery
   batteryHandle.text = `${batteryValue} %`; // the string including the batteryValue is being sent to the batteryHandle set at line 14
 }
-
-
-
