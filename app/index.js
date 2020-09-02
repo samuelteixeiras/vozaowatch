@@ -28,13 +28,9 @@ onHeartUpdate(({ bpm, zone: rawZone }) => {
   heartrateHandle.text  = `${bpm}`;
 });
 
-
-
-
 // Date 
 const dateValue = document.getElementById("dateLabel");
 clock.granularity = 'seconds';
-
 
 clock.addEventListener('tick', (evt) => {
   const date = evt.date;
@@ -67,11 +63,9 @@ clock.ontick = (evt) => {
   let secsZeroes = zeroPad(secs); // one digit secs get a zero in front
   timeHandle.text = `${hours}:${minsZeroed}:${secsZeroes}`; // time in format hh:mm:ss is assigned in the timeHandle defined at line 13
   
-  
   // Activity Values: adjusted type
   let stepsValue = (userActivity.today.adjusted["steps"] || 0); // steps value measured from fitbit is assigned to the variable stepsValue
   stepsHandle.text =  stepsValue;
- 
 
   let caloriesValue = (userActivity.today.adjusted["calories"] || 0); // calories
   caloriesHandle.text =  caloriesValue;
